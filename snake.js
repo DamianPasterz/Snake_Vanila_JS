@@ -1,7 +1,7 @@
 import { getInputDirection } from "./input.js";
 
 export const SNAKE_SPEED = 5;
-const snakeBody = [{ x: 11, y: 11 }];
+export const snakeBody = [{ x: 11, y: 11 }];
 let newSegments = 0;
 
 export function update() {
@@ -33,6 +33,7 @@ export function draw(gameBoard) {
 export function expandSnake(amount) {
     newSegments += amount;
 
+
 }
 
 export function onSnake(position, { ignoreHead = false } = {}) {
@@ -59,6 +60,7 @@ function equalPositions(pos1, pos2) {
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
+        console.log(`To jest${snakeBody.length}`);
     }
     newSegments = 0
 }
