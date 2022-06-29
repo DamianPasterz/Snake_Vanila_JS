@@ -61,6 +61,83 @@
             align-items: center;
 
         }
+
+        .btn {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 120px;
+            height: 60px;
+            border-radius: 15px;
+        }
+
+        /* modal_window */
+
+
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: 200ms ease-in-out;
+            border: 1px solid black;
+            border-radius: 10px;
+            z-index: 10;
+            background: var(--main);
+            /* width: 500px; */
+            max-width: 80%;
+            font-size: .8rem;
+            text-align: start;
+
+        }
+
+        .modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal-header {
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+
+        .modal-header .title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .modal-header .close-button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 10px 15px;
+        }
+
+        #overlay {
+            position: fixed;
+            opacity: 0;
+            transition: 200ms ease-in-out;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            pointer-events: none;
+        }
+
+        #overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
     </style>
     <script src="game.js" defer type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -73,14 +150,36 @@
 <body>
 
     <div id="game-board"></div>
-    <!-- <div class="score__list">
-        <ul class="list">
-            <li>
-                <span class="user">USER </span>
-                <span class=" score"> SCORE</span>
-            </li>
-        </ul>
-    </div> -->
+
+    <button class="btn" data-modal-target="#modal">top 10</button>
+    <a>
+        <!-- <img data-modal-target="#modal" src="./images/icons/codewarsWhiteLogot.svg " alt=" codewars" /> -->
+        <button data-modal-target="#modal">dfdf</button>
+    </a>
+    </div>
+
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">TOP 10</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="home-icons2">
+                <a href="https://www.codewars.com/users/MamianD" target="_blank">
+                    <p class="userName">user: </p>
+                    <p class="honor">honor: </p>
+                    <p class="rank">rank: </p>
+                    <p class="total">total completed: </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+
+
+
     <script src="./firebase.js"></script>
 </body>
 
