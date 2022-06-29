@@ -2,6 +2,7 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, sn
 import { update as updateFood, draw as drawFood } from './food.js'
 import { outsideGrid } from './grid.js'
 import { addScore } from './score.js'
+import { generateItems } from './score.js'
 
 
 
@@ -39,9 +40,9 @@ function main(currentTime) {
 
 
 
-            // setTimeout(() => {
-            //     window.location = '/';
-            // }, 10000);
+            setTimeout(() => {
+                window.location = '/';
+            }, 90000);
 
             addScore()
         }

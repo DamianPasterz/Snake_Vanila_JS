@@ -28,34 +28,59 @@ export function getItems() {
         })
 
         console.log(items);
-        // setTimeout(() => {
-        //     clearCompletedItems()
-        // }, 2000)
 
-        // generateItems(items);
-        // showAllStatsTodo(items)
+        setTimeout(() => {
+            generateItems(items);
+
+        }, 200)
+
+
+
 
     })
+
     return
+
+}
+
+
+
+export function generateItems(items) {
+
+
+    items.forEach((item, index) => {
+        console.log(item);
+        console.log(index);
+
+
+        for (let i = 0; i < 10; i++) {
+
+
+
+
+        }
+
+
+
+
+
+
+
+    })
+
+
+
 }
 
 
-function clearCompletedItems() {
 
 
 
-    let todoItems = db.collection("score");
-    let todoCompleted = todoItems
-        .get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(doc.id, "=>", doc.data());
-                let item = doc.id;
-                console.log(item);
-                db.collection("score").doc(item).delete();
-            }
 
 
-            )
-        })
 
-}
+
+
+
+
+

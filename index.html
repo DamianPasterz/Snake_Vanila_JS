@@ -39,6 +39,28 @@
             border: .25vmin solid black;
 
         }
+
+        .score__list {
+            /* width: 100%; */
+            height: 70px;
+            background-color: hsl(235, 24%, 19%);
+            display: flex;
+            border-bottom: 1px solid hsl(237, 14%, 26%);
+            cursor: pointer;
+            transition: all .25s ease;
+            transition-property: box-shadow, transform, border-color;
+            color: hsl(234, 39%, 85%);
+
+        }
+
+        .check {
+
+            flex-basis: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
     </style>
     <script src="game.js" defer type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -51,11 +73,14 @@
 <body>
 
     <div id="game-board"></div>
-    <div class="score__list">
-        <ul>
-
+    <!-- <div class="score__list">
+        <ul class="list">
+            <li>
+                <span class="user">USER </span>
+                <span class=" score"> SCORE</span>
+            </li>
         </ul>
-    </div>
+    </div> -->
     <script src="./firebase.js"></script>
 </body>
 
