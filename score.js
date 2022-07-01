@@ -16,58 +16,33 @@ export function addScore() {
 
 export function getItems() {
     db.collection("score").onSnapshot((snapshot) => {
-        console.log(snapshot);
         let items = [];
         snapshot.docs.forEach((doc) => {
             items.push({
                 id: doc.id,
                 ...doc.data(),
-
             })
             items = items.sort((a, b) => b["value"] - a["value"])
         })
 
-        console.log(items);
-
         setTimeout(() => {
             generateItems(items);
-
         }, 200)
 
-
-
-
     })
-
     return
-
 }
-
 
 
 export function generateItems(items) {
 
+    const positions1 = document.querySelector('.positions1')
+    const positions2 = document.querySelector('.positions2')
+    const positions3 = document.querySelector('.positions3')
 
-    items.forEach((item, index) => {
-        console.log(item);
-        console.log(index);
-
-
-        for (let i = 0; i < 10; i++) {
-
-
-
-
-        }
-
-
-
-
-
-
-
-    })
-
+    positions1.innerHTML = `${items[0].user} pkt. ${items[0].value} `
+    positions2.innerHTML = `${items[1].user} pkt. ${items[1].value} `
+    positions3.innerHTML = `${items[2].user} pkt. ${items[2].value} `
 
 
 }

@@ -61,6 +61,10 @@ function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
         console.log(`To jest${snakeBody.length}`);
+
+        const aktualScore = document.querySelector('.aktualScore')
+
+        aktualScore.innerHTML = `SCORE: ${snakeBody.length - 1} `
     }
     newSegments = 0
 }

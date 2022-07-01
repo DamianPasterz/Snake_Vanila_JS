@@ -71,22 +71,32 @@
             border-radius: 15px;
         }
 
+        .btn1 {
+            position: absolute;
+            top: 150px;
+            left: 50px;
+            width: 120px;
+            height: 60px;
+            border-radius: 15px;
+        }
+
         /* modal_window */
 
 
 
         .modal {
             position: fixed;
-            top: 50%;
-            left: 50%;
+            top: 35%;
+            left: 5%;
             transform: translate(-50%, -50%) scale(0);
             transition: 200ms ease-in-out;
             border: 1px solid black;
             border-radius: 10px;
             z-index: 10;
-            background: var(--main);
+            background: gray;
             /* width: 500px; */
             max-width: 80%;
+            text-decoration: none;
             font-size: .8rem;
             text-align: start;
 
@@ -119,6 +129,7 @@
         }
 
         .modal-body {
+            text-decoration: none;
             padding: 10px 15px;
         }
 
@@ -138,6 +149,20 @@
             opacity: 1;
             pointer-events: all;
         }
+
+        .positions1 .positions2 .positions3 {
+            font: 20px sans-serif;
+            text-decoration: none;
+
+        }
+
+        .aktualScore {
+            top: 10%;
+            left: 70%;
+            font-size: 80px;
+            position: absolute;
+            color: beige;
+        }
     </style>
     <script src="game.js" defer type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -151,33 +176,32 @@
 
     <div id="game-board"></div>
 
-    <button class="btn" data-modal-target="#modal">top 10</button>
-    <a>
-        <!-- <img data-modal-target="#modal" src="./images/icons/codewarsWhiteLogot.svg " alt=" codewars" /> -->
-        <button data-modal-target="#modal">dfdf</button>
-    </a>
+    <button class="btn" data-modal-target="#modal">top 3</button>
+    <button class="btn1" data-modal-target="#modal">New User</button>
+
     </div>
 
     </div>
     <div class="modal" id="modal">
         <div class="modal-header">
-            <div class="title">TOP 10</div>
+            <div class="title">TOP 3</div>
             <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
             <div class="home-icons2">
-                <a href="https://www.codewars.com/users/MamianD" target="_blank">
-                    <p class="userName">user: </p>
-                    <p class="honor">honor: </p>
-                    <p class="rank">rank: </p>
-                    <p class="total">total completed: </p>
-                </a>
+
+                <p class="positions1">1.</p>
+                <p class="positions2">2. </p>
+                <p class="positions3">3. </p>
+
+
+
             </div>
         </div>
     </div>
     <div id="overlay"></div>
 
-
+    <div class="aktualScore">SCORE: 0</div>
 
 
     <script src="./firebase.js"></script>

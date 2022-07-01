@@ -2,7 +2,7 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, sn
 import { update as updateFood, draw as drawFood } from './food.js'
 import { outsideGrid } from './grid.js'
 import { addScore } from './score.js'
-import { generateItems } from './score.js'
+import { getItems } from './score.js'
 
 
 
@@ -50,7 +50,15 @@ function main(currentTime) {
         return
 
     }
+    const new_user = document.querySelector('.btn1');
 
+    function newUser(event) {
+        event.preventDefault()
+        let name = window.prompt("podaj nowe imie: ")
+        localStorage.setItem('user', name)
+
+    }
+    new_user.onclick = newUser
 
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
@@ -123,3 +131,5 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
+
+getItems()
